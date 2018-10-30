@@ -114,11 +114,12 @@ namespace SingleResponsibilityPrinciple
             //    The @ sign allows for back slashes
             //    Watch for double quotes which must be escaped using "" 
             //    Watch for extra spaces after C: and avoid paths with - hyphens -
-           
-            using (var connection = new System.Data.SqlClient.SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chris\source\repos\tgibbons-students-css\cis-3285-asg-8-ckillian26\tradedatabase.mdf;Integrated Security=True;Connect Timeout=30;"))
-       
+
+            //Home Connection: using (var connection = new System.Data.SqlClient.SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chris\source\repos\tgibbons-students-css\cis-3285-asg-8-ckillian26\tradedatabase.mdf;Integrated Security=True;Connect Timeout=30;"))
+            using (var connection = new System.Data.SqlClient.SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ckillian\source\repos\cis-3285-asg-8-ckillian26\tradedatabase.mdf;Integrated Security=True;Connect Timeout=30;"))
+
             {
-                   
+
                 connection.Open();
                 using (var transaction = connection.BeginTransaction())
                 {
@@ -151,6 +152,6 @@ namespace SingleResponsibilityPrinciple
             StoreTrades(trades);
         }
 
-        
+
     }
 }
